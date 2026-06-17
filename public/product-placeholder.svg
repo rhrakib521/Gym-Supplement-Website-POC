@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800" role="img" aria-label="Thryve product">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#12161b"/>
+      <stop offset="1" stop-color="#0b0f13"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="800" fill="url(#bg)"/>
+  <circle cx="400" cy="380" r="240" fill="#1a1f26"/>
+  <!-- jar -->
+  <rect x="330" y="250" width="140" height="300" rx="22" fill="#222831" stroke="#2c333d" stroke-width="2"/>
+  <rect x="330" y="250" width="140" height="64" rx="22" fill="#1d9e75"/>
+  <rect x="330" y="294" width="140" height="20" fill="#0f6e56"/>
+  <text x="400" y="420" font-family="Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="3" fill="#f2f5f7" text-anchor="middle">THRYVE</text>
+  <line x1="360" y1="450" x2="440" y2="450" stroke="#3a4250" stroke-width="3"/>
+  <text x="400" y="490" font-family="Arial, sans-serif" font-size="16" fill="#9aa3ad" text-anchor="middle" letter-spacing="2">PREMIUM</text>
+</svg>

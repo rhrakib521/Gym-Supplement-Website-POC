@@ -1,0 +1,201 @@
+@import "tailwindcss";
+
+/* ============================================================
+   THRYVE — Design tokens · "Refined Editorial"
+   Dark-first. Green is punctuation, not paint. See PROJECT_LOG §5.
+   ============================================================ */
+
+:root,
+:root[data-theme="dark"] {
+  --bg: #0b0f13;
+  --surface-1: #12161b;
+  --surface-2: #1a1f26;
+  --line: #222831;
+  --ink: #f2f5f7;
+  --ink-dim: #9aa3ad;
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --bg: #ffffff;
+  --surface-1: #f3f8f5;
+  --surface-2: #e8f0ed;
+  --line: #e4e7eb;
+  --ink: #0a0a14;
+  --ink-dim: #5a5a72;
+  color-scheme: light;
+}
+
+/* Accent colors are constant across both themes (per brief) */
+:root {
+  --green: #1d9e75;
+  --green-soft: #9fe1cb;
+  --green-deep: #0f6e56;
+  --amber: #e8a020;
+  --blue: #2f81f7;
+  --red: #da3633;
+  --radius: 10px;
+  --container: 1240px;
+}
+
+/* Map tokens into Tailwind v4 so bg-bg / text-ink / border-line / bg-green … work */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface-1: var(--surface-1);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-ink-dim: var(--ink-dim);
+  --color-green: var(--green);
+  --color-green-soft: var(--green-soft);
+  --color-green-deep: var(--green-deep);
+  --color-amber: var(--amber);
+  --color-blue: var(--blue);
+  --color-red: var(--red);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-space-grotesk), var(--font-inter), sans-serif;
+  --font-bn: var(--font-hind-siliguri), var(--font-inter), sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
+
+  --radius-xl: 14px;
+}
+
+@layer base {
+  *,
+  ::before,
+  ::after {
+    border-color: var(--line);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    overflow-x: hidden;
+    font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+    font-feature-settings: "ss01", "cv01";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Bengali gets its own type stack */
+  :where(html[data-lang="bn"], [data-lang="bn"]) {
+    font-family: var(--font-hind-siliguri), var(--font-inter), sans-serif;
+  }
+  :where(html[data-lang="bn"]) body {
+    font-family: var(--font-hind-siliguri), var(--font-inter), sans-serif;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-space-grotesk), var(--font-inter), sans-serif;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+    line-height: 1.02;
+  }
+
+  ::selection {
+    background: var(--green);
+    color: #04140e;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--surface-2);
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+@layer utilities {
+  .container-page {
+    width: 100%;
+    max-width: var(--container);
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .container-page {
+      padding-inline: 2rem;
+    }
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Marquee ticker */
+  .animate-marquee {
+    animation: thryve-marquee 30s linear infinite;
+  }
+  .group:hover .animate-marquee {
+    animation-play-state: paused;
+  }
+
+  /* Hairline gradient divider */
+  .hairline {
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--line) 20%,
+      var(--line) 80%,
+      transparent
+    );
+  }
+
+  /* Subtle film-grain / noise surface for editorial depth (optional) */
+  .noise {
+    position: relative;
+  }
+  .noise::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+@keyframes thryve-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-marquee {
+    animation: none !important;
+  }
+}

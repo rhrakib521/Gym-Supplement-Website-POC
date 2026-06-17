@@ -1,0 +1,83 @@
+{
+  "brand": {
+    "name": "Thryve",
+    "tagline": "become unstoppable."
+  },
+  "nav": {
+    "creatine": "Creatine",
+    "preWorkout": "Pre-Workout",
+    "activewear": "Activewear",
+    "whey": "Whey Protein",
+    "accessories": "Accessories",
+    "shop": "Shop",
+    "athletes": "Athletes",
+    "journal": "Journal",
+    "science": "Science",
+    "stories": "Stories",
+    "about": "About",
+    "contact": "Contact",
+    "trackOrder": "Track Order",
+    "search": "Search",
+    "account": "Account",
+    "cart": "Cart",
+    "menu": "Menu"
+  },
+  "hero": {
+    "eyebrow": "Made in Bangladesh · Lab-tested",
+    "title1": "become",
+    "title2": "unstoppable.",
+    "subtitle": "Research-backed creatine monohydrate — pure, dosed right, and verified by QR. Built for Bangladeshi athletes who refuse average.",
+    "ctaShop": "Shop Creatine",
+    "ctaVerify": "Verify My Jar"
+  },
+  "trust": {
+    "labTested": "Lab Tested",
+    "gmp": "GMP Certified",
+    "authentic": "QR Authentic",
+    "cod": "COD Available",
+    "freeDelivery": "Free delivery over ৳2,500",
+    "returns": "7-day returns"
+  },
+  "marquee": [
+    "Lab-tested every batch",
+    "Free delivery over ৳2,500",
+    "QR-verified authentic",
+    "Cash on delivery nationwide",
+    "Made in Bangladesh"
+  ],
+  "stats": {
+    "customers": "2,000+ athletes",
+    "deliveryAreas": "689 delivery areas",
+    "rating": "4.9 average rating"
+  },
+  "common": {
+    "addToCart": "Add to Cart",
+    "buyNow": "Buy Now",
+    "viewAll": "View all",
+    "learnMore": "Learn more",
+    "comingSoon": "Coming Soon",
+    "newBrand": "New Brand Dropping",
+    "subscribe": "Subscribe & Save",
+    "oneTime": "One-time purchase",
+    "save": "Save",
+    "off": "off",
+    "perMonth": "/month",
+    "servings": "servings",
+    "inStock": "In stock",
+    "lowStock": "Only {{count}} left",
+    "outOfStock": "Out of stock",
+    "bdt": "BDT"
+  },
+  "footer": {
+    "tagline": "Premium creatine, made in Bangladesh.",
+    "rights": "All rights reserved.",
+    "madeIn": "Made in Bangladesh",
+    "shop": "Shop",
+    "company": "Company",
+    "support": "Support",
+    "newsletter": "Join the Thryve list",
+    "newsletterHint": "Drops, science, and athlete stories. No noise.",
+    "subscribe": "Subscribe",
+    "emailPlaceholder": "your@email.com"
+  }
+}

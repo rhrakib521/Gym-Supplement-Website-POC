@@ -1,0 +1,639 @@
+
+========== PAGE 1 ==========
+
+FRONT-END BRIEF  ·  v1.0
+THRYVE
+WEBSITE REVAMP
+FRONT-END SPECIFICATION
+Complete design brief for developers, designers, and implementation partners
+thryvebd.com · Full website revamp · June 2026
+Stack: React + Node/Express · Built on top of Thryve OS backend
+Scale target: 500–5,000 orders/day · Bilingual: English + Bengali
+Audience: Developers · UI/UX Designers · Implementation Partners
+ 5
+CATEGORIES
+10+
+PAGE TYPES
+2
+LANGUAGES
+5
+PAYMENT METHODS
+
+
+========== PAGE 2 ==========
+
+01 BRIEF STATEMENT
+The Complete Front-End Specification
+thryvebd.com requires a full revamp. Not a reskin — a rebuild. The current site is a single-product brochure.
+The new site must be a full-stack commercial platform capable of handling 500-5,000 orders per day,
+presenting 4-5 product categories, supporting a bilingual audience, and integrating seamlessly with the
+Thryve OS backend already specified in Vol 6-10.
+Design Direction
+The visitor lands and feels two things simultaneously: raw performance energy (intense, athletic, bold) and
+Bangladeshi pride (local hero brand, community-first). Not generic supplement SaaS. Not a cheap local copy.
+Something that looks like it belongs next to MuscleBlaze — but speaks to Bangladesh specifically.
+Inspiration Analysis — What to Take From Each
+MuscleBlaze
+(muscleblaze.com)
+Goal-based navigation (Bulking, Recovery, Fat Loss). Authenticity checker as a trust
+anchor page. Lab certificate integration. Subscription toggle directly on product page.
+Apparel fully integrated in nav. The product page structure and upsell logic are the closest
+reference for Thryve.
+BeastLife
+(beastlife.in)
+Authentication page elevated to navigation-level prominence. Clean Shopify-style
+collection pages. Strong "100% Authentic" trust messaging. Category image tiles on
+homepage — exactly the structure Thryve needs.
+SuperYou
+(superyou.in)
+Identity-led design. Brand is built around "becoming" someone, not just buying a product.
+Clean, minimal, aspirational. The SuperYou tone is the closest to Thryve's Level 2 brand
+pivot (aspirational identity). Use this for copy tone and layout whitespace.
+Optimum Nutrition
+India
+Global trust signals. Lab results presented prominently. The product page information
+hierarchy is the gold standard — tabs (About, Ingredients, How To Use, Reviews,
+Certificate) in that exact order.
+Current
+thryvebd.com
+What to discard: hardcoded testimonials, no account system, no order tracking, no
+upselling, single-product focus, no payment gateway integration, no blog, no category
+structure. The domain, brand name, and existing customer reviews are the only things to
+carry forward.
+
+
+========== PAGE 3 ==========
+
+02 HOMEPAGE
+Homepage Design Specification
+ Fig 01. Homepage wireframe — nav, hero, marquee bar, category strip, bestsellers.
+Section-by-Section Specification
+Navigation Bar
+Logo (T mark + THRYVE wordmark) left. Five category links centre: Creatine,
+Pre-Workout, Activewear, Whey Protein, Accessories. Right: Language toggle
+(Bengali/EN), Search, Account, Cart with item count, Track Order button. Sticky on scroll.
+Dark background, green accents. Mega-dropdown on hover for each category (see Nav
+spec).
+Hero Section
+Full-width dark background. Left: headline copy in two lines — white and green
+alternating. "TRAIN HARDER. THRYVE MORE." Subtext: lab-tested, Bangladesh-made.
+Two CTAs: "Shop Now" (solid green) and "Verify My Jar" (outline green — this is the trust
+differentiator). Four trust chips below CTAs: Lab Tested, GMP Certified, Authentic, COD
+Available. Right: full-height product/athlete hero image. Minimal copy. Maximum visual
+impact. Two mode support: dark hero with light trust chips on dark bg.
+Marquee Ticker
+Full-width green bar below hero. Scrolling text: brand claims, delivery offer, trust signals.
+Standard CSS marquee animation. Simple to implement, high visual impact.
+
+
+========== PAGE 4 ==========
+
+Category Strip
+Five cards in a row. Each: category image top, name and sub-description below.
+Pre-Workout and Activewear show "Coming Soon" overlay badge. Whey shows "2027"
+overlay. This communicates brand ambition without empty pages.
+Bestsellers Row
+Four product cards. Each: product image, name, price in green, Add to Cart button. Cards
+are rich — flavour shown, stock indicator if low, rating stars. Last card is always a
+bundle/combo offer.
+Social Proof Strip
+Three stats: 2,000+ customers, 689 delivery areas, 4.9 star rating. Simple dark card strip.
+Data from PostgreSQL, updated monthly.
+Athlete
+Endorsement Strip
+Three athlete cards in a row. Photo, name, sport, "Shop with their code" CTA. Links to
+Athletes page. Mobile: horizontal scroll.
+Blog Preview
+Three latest blog posts. Image, title, read time. "View All" links to /blog. Content from CMS
+(headless or built-in).
+QR Verification CTA
+Full-width dark section: "Verify Your Thryve is Authentic." Input field for QR serial. This
+section is the trust moat visualised on the homepage.
+Footer
+Logo + tagline. Links: Shop, Athletes, Blog, Science, Track Order, About, Contact. Social
+icons: Instagram, Facebook, YouTube. Payment icons: bKash, Nagad, Visa, Mastercard,
+COD. Registered address. WhatsApp floating button bottom-right.
+
+
+========== PAGE 5 ==========
+
+03 NAVIGATION + INFORMATION ARCHITECTURE
+Nav Structure + Full Site Map
+ Fig 02. Full navigation with mega-dropdown and complete site information architecture.
+Category Structure
+Creatine (Live)
+Sub-navigation: By Flavour (Mango Ice, Watermelon Mojito, Unflavored), By Goal (Muscle
+Building, Recovery, Strength), Bundles. Information links: Lab Certificate, QR Verify,
+Science of Creatine. Featured product card in dropdown. This is the primary revenue
+category.
+Pre-Workout
+(Coming Soon —
+Katana)
+"Coming Soon" overlay on category page. Email/phone waitlist capture. Katana name and
+teaser copy visible. Sub-page for sachet box and jar variant. Internal launch planned
+August 2026.
+Activewear (New
+Brand — Coming
+Soon)
+Separate brand identity under Thryve Holdings. "New Brand Dropping" overlay. Teaser
+page with brand name reveal. Email waitlist. Launch event link once Iron Fest 2027 is
+planned.
+Whey Protein (2027)
+"Coming 2027" overlay. Science teaser page: why whey, what makes Thryve different. No
+waitlist needed yet — simply communicates brand roadmap to visitors.
+Accessories (Live)
+Shaker, gym bag, lifting belt, wrist wraps. Upsell opportunity: "Complete your stack" widget
+on creatine product page. Simple collection page. Image grid with quick-add.
+
+
+========== PAGE 6 ==========
+
+Full Site Map
+Page
+URL
+Purpose
+Homepage
+/
+Hero, categories, bestsellers, social proof, QR CTA
+Shop / All Products
+/shop
+Full product grid with filters
+Category: Creatine
+/creatine
+Flavour-filtered collection
+Category: Pre-Workout
+/pre-workout
+Coming soon + waitlist
+Category: Activewear
+/activewear
+New brand teaser
+Category: Whey
+/whey
+2027 teaser
+Category: Accessories
+/accessories
+Product grid
+Product Detail
+/product/[slug]
+Full product page (see spec)
+Athletes
+/athletes
+Grid of athlete cards
+Blog
+/blog
+Article listing
+Blog Post
+/blog/[slug]
+Individual article
+Science
+/science
+Lab certs, ingredient explainers, QR verify
+Thryver Stories
+/stories
+Customer transformations
+Resources
+/resources
+Downloadable guides hub
+Track Order
+/track
+Phone number lookup + WhatsApp option
+Account
+/account
+Login, order history, subscription management
+Cart
+/cart
+Cart page with upsell widget
+Checkout
+/checkout
+3-step: address, payment, confirm
+Order Confirmed
+/order/[id]
+Confirmation + next steps
+QR Verify
+/verify/[serial]
+Authentication result page
+About
+/about
+Brand story, mission, team
+Contact
+/contact
+WhatsApp, email, address
+
+
+========== PAGE 7 ==========
+
+04 PRODUCT PAGE
+Product Page Design Specification
+ Fig 03. Product page wireframe — image gallery, rich info panel, upsell widget, reviews.
+Product Page Component Spec
+Image Gallery (Left)
+Main image large. 4 thumbnail strip below. Zoom on hover (desktop). Swipe gallery
+(mobile). Images: product on white, product in lifestyle, ingredient panel close-up, lab
+certificate thumbnail.
+Badges Row
+BESTSELLER (green), LAB TESTED (amber), QR AUTHENTICATED (teal). Pulled from
+product metadata. Dynamic based on SKU.
+Product Title +
+Variant
+Product name large. Variant descriptor below (flavour, size, serving count). Rating stars +
+review count linking to reviews section.
+Price + Discount
+Current price large (white). Strikethrough original price. Discount percentage badge (red).
+All prices in BDT with taka symbol.
+Subscription Toggle
+Two-button toggle: One-time purchase vs Subscribe and Save (13% off). Toggle state
+changes price and CTA copy. Connected to subscription backend.
+Flavour Selector
+Pill buttons for each flavour variant. Selected = green fill. Unselected = dark outline. Stock
+indicator: if a variant is low stock, show "Only X left" below selector.
+
+
+========== PAGE 8 ==========
+
+Qty + CTA Row
+Qty stepper (minus, number, plus). Add to Cart (green, full price shown). Buy Now (blue
+outline, faster checkout). Both buttons full-width on mobile.
+Trust Row
+Four inline trust signals: Free delivery over ■2,500, COD available, 7-day return, QR
+authenticated. Icon + text. Minimal. Reassurance at the moment of decision.
+Upsell Widget
+Amber-bordered card: "Frequently Bought Together." Shows one complementary product
+at a bundle price. Driven by cross-sell rules from Upsell Timing Agent in the backend.
+Payment Icons
+Row of payment method icons: bKash, Nagad, Visa, Mastercard, COD. Static display.
+Clicking opens checkout with that method pre-selected.
+Content Tabs
+Five tabs: About, Ingredients, How To Use, Reviews, Lab Certificate. Tab content loaded
+lazily. Reviews tab shows star breakdown + individual reviews. Lab Certificate tab shows
+actual certificate PDF thumbnail + download link.
+Reviews Section
+Star rating breakdown bar chart. Individual review cards: name, city, rating, text, date.
+Verified purchase badge. Photo upload option for reviews. Paginated. Sorted by most
+recent default, most helpful option.
+
+
+========== PAGE 9 ==========
+
+05 CHECKOUT + ORDER TRACKING
+Checkout Flow + Bilingual Tracking
+ Fig 04. Checkout 3-step flow and order tracking — phone lookup + WhatsApp methods.
+Checkout Flow — 3 Steps
+The checkout must be the simplest possible experience for a Bangladeshi customer. No account required to buy. COD
+must be the default and most prominent option. The entire flow must work in Bangla and English.
+Step 1 — Delivery
+Details
+Full name. Phone number (01XXXXXXXXX format — validated). Division / District / Area
+dropdowns (Bangladesh admin hierarchy). Full address text field. Apartment/flat optional.
+Language toggle: customer can switch to Bangla at any point. Phone number is
+auto-normalised on blur (strips 880, adds 01).
+Step 2 — Payment
+Method
+Four options displayed as large tappable cards: Cash on Delivery (default, most
+prominent), bKash (tap to expand OTP flow), Nagad (tap to expand), SSLCommerz
+Visa/Mastercard (redirect to gateway). COD shows estimated delivery date and COD
+amount. bKash shows full bKash number entry + OTP confirmation inline.
+Step 3 — Review +
+Confirm
+Order summary: product thumbnail, qty, flavour, price. Delivery address confirmation.
+Payment method selected. Estimated delivery date (calculated from area). Promo/athlete
+code input field (discount auto-applied). Upsell: "Add complementary product for ■200 off"
+one-tap option. Place Order button: green, full width, clear CTA in Bangla + English.
+Order Tracking — Design Spec
+
+
+========== PAGE 10 ==========
+
+Phone Number
+Lookup (Primary)
+Page at /track. Single input: phone number in 01XXXXXXXXX format. Optional: Order ID
+for specificity. Submit button in Bangla + English. Result: last 3 orders for that phone, with
+status, ETA, and courier tracking link. Status labels in both languages: Confirmed /
+■■■■■■■, Shipped / ■■■■■■ ■■■■■■, Delivered / ■■■■■■■, Returned /
+■■■■■ No account required. This is the primary method — lowest friction.
+WhatsApp
+Self-Service
+(Secondary)
+Displayed on the /track page as Option 2. Instruction: "Send ORDER to [number] on
+WhatsApp." Tap-to-open WhatsApp button with pre-filled message. AiSensy bot replies
+with order status in Bangla + English automatically. This is the highest-adoption method
+for Bangladesh — WhatsApp is already open on every customer's phone.
+Post-Purchase
+Tracking Link
+On the Order Confirmed page and in the WhatsApp Shipped notification (Flow 4), a direct
+tracking link is provided that pre-fills the phone number. One tap from WhatsApp to order
+status — zero friction.
+
+
+========== PAGE 11 ==========
+
+06 PAYMENT INTEGRATION
+All Payment Methods
+Method
+Integration
+Flow
+Priority
+Cash on
+Delivery (COD)
+Backend flag on order
+Order placed → Nuport → COD collected on
+delivery
+Default — most
+prominent
+bKash
+bKash Payment Gateway
+API
+Inline OTP flow in checkout Step 2. No redirect.
+Second most prominent
+Nagad
+Nagad Merchant API
+Inline OTP flow. Similar to bKash.
+Third most prominent
+SSLCommerz
+SSLCommerz hosted
+checkout
+Redirect to SSLCommerz → return to confirm
+page
+For card payers
+Visa /
+Mastercard
+Via SSLCommerz
+Same SSLCommerz flow covers cards
+International customers
+Important: COD must always be the most prominent option. Bangladesh is a COD-dominant market. Hiding it behind
+digital options will reduce conversion. The checkout default state = COD selected.
+
+
+========== PAGE 12 ==========
+
+07 LEAD CAPTURE
+Two Methods That Convert in Bangladesh
+ Fig 05. Lead capture — WhatsApp sticky bar (primary) and exit intent phone popup (secondary).
+Why Phone, Not Email
+Email open rates in Bangladesh: 12-18%. WhatsApp open rates: 85-95%. Every phone number captured feeds directly
+into the AiSensy lifecycle flows already specified in the Thryve OS (Vol 8). A captured phone number is worth 10x more
+than a captured email address in this market.
+Method 1 —
+WhatsApp Sticky
+Bar (Primary)
+Fixed green bar at the bottom of every page on both mobile and desktop. Text: "Chat on
+WhatsApp · Get ■100 off your first order" + Chat Now button. On click: opens WhatsApp
+with pre-filled message. Bot captures phone automatically. Sends discount code. Enters
+AiSensy lifecycle flow. Never disappears. Never interrupts. Permanent CTA.
+Implementation: simple fixed CSS div + wa.me link with pre-filled text.
+Method 2 — Exit
+Intent Phone Popup
+(Secondary)
+Desktop: triggers when cursor moves toward browser close/back button. Mobile: triggers
+after 60 seconds of scroll inactivity. Popup: bold offer (■150 off first order), single phone
+number field, Bangla + English CTA. Phone only — no name, no email. Single field = 3x
+higher completion rate. On submit: AiSensy sends discount code via WhatsApp
+immediately. Shows maximum once per session. Dismissed = does not show again for 7
+days (cookie).
+
+
+========== PAGE 13 ==========
+
+08 BILINGUAL SPECIFICATION
+Bengali + English — From Day One
+Both languages live simultaneously. Not a separate Bengali site — a toggled layer. The language toggle is
+top-right in the nav. Switching applies to all UI text, CTA copy, error messages, order status labels, and
+form placeholders. Product names and brand terms (Thryve, Katana, Mango Ice) stay in English in both
+modes.
+Language Toggle
+Top-right nav button: "■■■■■ / EN". Clicking switches language. State persisted in
+localStorage. Detected from browser language preference on first visit. Bangladesh IP +
+Bengali browser = Bengali default.
+Translation Scope
+Navigation labels, page headings, product descriptions, CTA buttons, error messages,
+form labels, order status labels, checkout copy, review prompts. Blog posts: authored in
+one language, translation optional per post.
+Translation Scope —
+Excluded
+Brand name (THRYVE), product names (Mango Ice, Watermelon Mojito, Katana), athlete
+names, scientific terms (Creatine Monohydrate), domain name. These stay in English in
+both language modes.
+Technical
+Implementation
+i18n library (react-i18next recommended). Translation JSON files for EN and BN. All UI
+strings referenced by key, not hardcoded. Bangla font: Hind Siliguri or Noto Sans Bengali
+from Google Fonts. RTL not required — Bengali is LTR.
+Forms in Bengali
+All form placeholders, error messages, and validation messages in Bengali when Bengali
+mode active. Phone field placeholder: "■■■■■ ■■■ ■■■■■ ■■■ (01XXXXXXXXX)".
+Required field error: "■■ ■■■■ ■■■■ ■■■ ■■■■■■■".
+Order Status Labels
+Confirmed: ■■■■■■■, Processing: ■■■■■■■■■■■■■, Shipped: ■■■■■■
+■■■■■■, Out for Delivery: ■■■■■■■■■■ ■■■, Delivered: ■■■■■■■, Returned:
+■■■■, Cancelled: ■■■■■.
+
+
+========== PAGE 14 ==========
+
+09 CONTENT PAGES
+Blog · Science · Thryver Stories · Resources
+Blog (/blog)
+Article listing page: image grid, title, read time, category tag, date. Categories: Nutrition
+Science, Training Tips, Thryve News, Product Deep-Dives. Individual post: hero image,
+author (Jarraf or athlete), read time, content, related products widget, related posts.
+SEO-optimised. Auto-populated from headless CMS (recommend Sanity or Contentful).
+Science (/science)
+Three sections: (1) Lab Results — downloadable PDFs, batch-linked. (2) Ingredient
+Explainers — what creatine does, science of each ingredient. (3) QR Verification — live
+verification tool (same as /verify/[serial]). This page is the trust moat made visible. Link
+from every product page.
+Thryver Stories
+(/stories)
+Customer transformation posts. Photo before/after, name, city, their story. Submitted via a
+simple form (name, city, story, photo upload). Moderated before publishing. Connected to
+the UGC request in Flow 10.
+Resources
+(/resources)
+Downloadable guide hub. Content: Creatine Beginner Guide (PDF), Training for Muscle
+Mass Guide, Bangladesh Supplement Safety Guide, How to Verify Authentic
+Supplements. Phone/WhatsApp capture before download (gate the content lightly).
+Athletes (/athletes)
+Card grid. Each card: athlete photo, name, sport, social handle, their unique code. Clean.
+Simple. No individual athlete profile pages at launch — card grid is sufficient. Codes are
+auto-populated from PostgreSQL athlete table. Clicking a card opens a modal with slightly
+more detail + "Shop with code" CTA.
+
+
+========== PAGE 15 ==========
+
+10 TECHNICAL REQUIREMENTS
+Performance · Scale · Backend Integration
+The frontend must be built to handle 500-5,000 orders per day. This is not a Shopify theme — it is a custom
+React application talking to the Node+Express backend specified in the Thryve OS.
+Frontend Stack
+React (Next.js recommended for SSR + SEO). Tailwind CSS for styling. react-i18next for
+bilingual support. SWR or React Query for data fetching. Deployed on Vercel or Railway.
+CDN for all images (existing BunnyCDN setup).
+Performance Targets
+Lighthouse score: 90+ on mobile. Core Web Vitals: LCP under 2.5s, CLS under 0.1.
+Images: WebP format, lazy loading, BunnyCDN delivery. Fonts: preloaded. Critical CSS
+inlined. JS bundle split by route.
+API Integration
+All product data, order data, customer data from Node+Express backend API. No
+hardcoded content except static marketing copy. Product catalog: /api/products. Order
+placement: /api/orders. Order tracking: /api/track. QR verify: /api/verify/[serial].
+Order Volume
+Architecture
+5,000 orders/day = ~3.5 orders/minute peak. Database: PostgreSQL with connection
+pooling (PgBouncer). API: Node cluster mode, horizontal scaling on Railway. Queue:
+order confirmation via n8n async — never blocks the HTTP response. CDN: all product
+images on BunnyCDN, never from origin on each request.
+Backend Integration
+Points
+Website places order → Node API → PostgreSQL + Nuport. WhatsApp confirmation (Flow
+2) triggered by n8n webhook. QR serial lookup → PostgreSQL qr_serials table.
+Subscription toggle → Node subscription endpoint. Lead capture → AiSensy API directly
+from Node backend. Payment: SSLCommerz redirect, bKash/Nagad inline OTP via their
+APIs.
+Dark/Light Mode
+Both modes supported. CSS custom properties for all colours. User preference persisted
+in localStorage. System preference detected on first visit. Dark: background #0D1117,
+accent #1D9E75. Light: background white, accent #1D9E75. Accent colour (Thryve green)
+remains consistent across both modes.
+SEO Requirements
+Next.js SSR for product and blog pages (Google must index them). Meta titles and
+descriptions per page. Open Graph images for social sharing. Structured data: Product
+schema, BreadcrumbList, Organization. Bengali page titles and descriptions when Bengali
+mode active. Sitemap auto-generated. robots.txt allowing all crawlers.
+Accessibility
+WCAG 2.1 AA minimum. All images have alt text. Form inputs have visible labels. Colour
+contrast ratio 4.5:1 minimum. Keyboard navigable. Screen reader compatible for all
+interactive elements.
+
+
+========== PAGE 16 ==========
+
+11 UPSELLING + CONVERSION LOGIC
+Every Touchpoint That Increases AOV
+Average Order Value is ■2,175. Target: ■2,800+. Three upsell surfaces increase AOV without a dedicated upsell
+page.
+Product Page —
+Upsell Widget
+Amber-bordered card below the Add to Cart button. "Frequently Bought Together: Add
+[complementary product] for ■200 off." One-tap to add bundle to cart. Logic powered by
+cross-sell rules in the Upsell Timing Agent. Rule example: Mango Ice buyer → show
+Watermelon bundle.
+Cart Page —
+Suggested Add
+Below cart items: "You might also need:" — one accessory (shaker or bag). Shown only if
+cart contains only supplement, no accessories. Simple rule-based, not ML. ■800 average
+accessory price lifts AOV significantly.
+Checkout Step 3 —
+Last Upsell
+"Before you confirm: add [product] for ■X off — limited to this order." One-click add. Does
+not leave checkout flow. Should be a consumable: a sample sachet of pre-workout
+(coming soon), or a second creatine jar at ■200 off.
+Post-Purchase Page
+"Add to your order before it ships." One product shown with a 15-minute countdown timer.
+If clicked: appended to the same Nuport order before dispatch. After 15 minutes: offer
+expires, standard price shown.
+Subscription Pitch
+On Day 30 reorder message (lifecycle Flow 8) and on the subscription toggle in the
+product page. "Subscribe: ■1,999/month. Save 13%. Never run out." Subscription AOV =
+lower per unit but higher LTV. Primary focus once base is built.
+
+
+========== PAGE 17 ==========
+
+12 DESIGN SYSTEM
+Colours · Typography · Components
+Colour System
+Token
+Dark Mode Hex
+Light Mode
+Hex
+Usage
+--color-accent
+#1D9E75
+#1D9E75
+Primary CTAs, links, badges, progress bars
+--color-accent-dark
+#0F6E56
+#0F6E56
+Hover states, nav bar, section headers
+--color-accent-light
+#9FE1CB
+#9FE1CB
+Subtext on dark backgrounds, chips
+--color-bg-primary
+#0D1117
+#FFFFFF
+Page background
+--color-bg-card
+#161B22
+#F3F8F5
+Card surfaces
+--color-bg-card-2
+#1C2330
+#E8F0ED
+Nested card, hover states
+--color-text-primary
+#F0F6FC
+#0A0A14
+Headings, prices, product names
+--color-text-secondary
+#8B949E
+#5A5A72
+Descriptions, subtext, placeholders
+--color-border
+#21262D
+#E0E0E0
+Card borders, dividers
+--color-amber
+#E8A020
+#E8A020
+Upsell widgets, discount badges, warnings
+--color-blue
+#2F81F7
+#2F81F7
+Secondary CTAs, info states, tracking
+--color-red
+#DA3633
+#DA3633
+Error states, strikethrough prices, RTO
+Typography
+English: Inter (Google Fonts) — all weights. Clean, modern, highly legible at small sizes. Bengali: Hind Siliguri or Noto
+Sans Bengali (Google Fonts) — Regular and SemiBold only. Fallback stack: system-ui, -apple-system, sans-serif.
+Heading sizes: H1 40px, H2 28px, H3 20px, H4 16px. Body: 16px/1.6 line-height. Never use Bangla fonts for English
+content — separate font stacks per language.
+Core Components
+Component
+Specification
+Button — Primary
+Green fill, white text, 8px radius, 44px min height. Hover: darker green.
+Button — Secondary
+Green outline, green text, same size. Hover: green fill.
+Button — Destructive
+Red fill, white text. Only for cancellations and deletes.
+Product Card
+Image (4:3), badges overlay top-left, title, price, rating, Add to Cart.
+Category Card
+Image (16:9), name, sub-description, Coming Soon overlay if inactive.
+Review Card
+Star rating, reviewer name, city, date, review text, verified badge.
+Trust Chip
+Small pill: icon + label. Used in trust rows and hero section.
+
+
+========== PAGE 18 ==========
+
+Component
+Specification
+Payment Method Card
+Large tappable card. Icon, name, brief description. Selected = green border.
+Upsell Widget
+Amber top border card. Product name, bundle price, one-tap CTA.
+Language Toggle
+Two-state pill button in nav. Active state highlighted.
+Sticky WhatsApp Bar
+Fixed bottom bar. Green background. WhatsApp icon. Chat Now button.
+Subscription Toggle
+Two-button segmented control. One-time vs Subscribe. Price updates live.
+The website is the front door to the entire Thryve OS. Every order that enters here triggers the 14 AI
+agents and 12 lifecycle flows. Every phone number captured here enters the retention system. Every
+QR scan that lands here builds the trust database. Build it to last.
+ thryvebd.com · Front-End Brief · June 2026 · Jarraf Ahmed · Thryve Sports Supplements · Confidential

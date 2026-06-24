@@ -8,10 +8,10 @@
 
 :root,
 :root[data-theme="dark"] {
-  --bg: #0b0e13;        /* lifted rich slate (lighter dark, not void-black) */
-  --surface-1: #14181f; /* neutral card */
-  --surface-2: #1b2027; /* raised/hover */
-  --line: #262b33;      /* neutral hairline */
+  --bg: #08090b;        /* deeper dark base (gradient supplies the sheen) */
+  --surface-1: #101317; /* shaded card — lifted off the base */
+  --surface-2: #161a1f; /* raised/hover */
+  --line: #23262d;      /* neutral hairline */
   --ink: #f6f7f8;       /* crisp near-white */
   --ink-dim: #9aa1ab;   /* luminous secondary */
   --volt: #b6ff3c;      /* athletic energy spark — used sparingly */
@@ -79,9 +79,9 @@
 
   body {
     background:
-      radial-gradient(1000px 540px at 50% -8%, rgba(29, 158, 117, 0.07), transparent 62%),
-      radial-gradient(760px 440px at 88% 6%, rgba(182, 255, 60, 0.045), transparent 58%),
-      var(--bg);
+      radial-gradient(1100px 560px at 50% -10%, rgba(29, 158, 117, 0.06), transparent 60%),
+      radial-gradient(820px 460px at 88% 4%, rgba(182, 255, 60, 0.04), transparent 58%),
+      radial-gradient(150% 120% at 50% -12%, #0e1116 0%, #090b0e 46%, #050608 100%);
     background-attachment: fixed;
     color: var(--ink);
     overflow-x: hidden;

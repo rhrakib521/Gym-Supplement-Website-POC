@@ -11,8 +11,8 @@
 | **Builder** | Periscale Projects (this Claude Code session) |
 | **Current live site** | https://www.thryvebd.com/ (single-product brochure — being replaced) |
 | **Source brief** | `~/Downloads/Thryve_Website_FrontEnd_Brief.pdf` (18 pp, v1.0, June 2026) |
-| **Status** | 🟢 **Built** — all 5 phases complete, production build green (33 routes) |
-| **Last updated** | 2026-06-17 |
+| **Status** | 🟢 **Built** (v1 "Refined Editorial", 5 phases, 33 routes, build green) → 🟡 **Redesigning** to "Performance Editorial" (BeastLife blend + story features). See 2026-06-24 entry in §9 + spec. |
+| **Last updated** | 2026-06-24 |
 
 ---
 
@@ -100,8 +100,17 @@ QR-authentic, GMP, "Made in Bangladesh") genuinely visible — not buried. Edito
 | 2026-06-16 | D6 | Type pairing = **Space Grotesk (display) + Inter (body) + Hind Siliguri (BN)**, optional **Fraunces** serif for aspirational pull-quotes | Grotesk+serif+clean-body reads editorial-premium and dodges the generic "Inter everywhere" AI look; all on Google Fonts (clean `next/font`) | ✅ |
 | 2026-06-16 | D7 | Imagery = **premium stock (athletes/lifestyle) + CSS/SVG creatine-jar mockup**; client drops real assets later | No client photos available now; keep `next/image` + Cloudinary-ready paths so real assets slot in | ✅ |
 | 2026-06-16 | D8 | Content store = **mock data now, CMS-ready structure** (no Sanity this pass) | Brief recommends headless CMS but that's premature for a front-end POC; structure so a CMS swap is localised | ✅ |
+| 2026-06-24 | R1 | **Redesign scope** = full visual overhaul across all ~33 pages | Client likes BeastLife design → wants a full blend, not a homepage patch | ✅ |
+| 2026-06-24 | R2 | **Blend direction** = *Premium commerce blend* (BeastLife structure/energy, executed premium; strict badge discipline) | BeastLife's actual look is discount-dense; cloning it regresses to the "cheap local copy" the brief warns against. Take the structure + energy, execute premium | ✅ |
+| 2026-06-24 | R3 | **Story features** = Brand-origin narrative + Product/trust journey + Goal-based journey (+ transformation strip feeding `/stories`) | Client asked for "a bit story-based features"; these 3 differentiate the brand and elevate the trust moat + identity | ✅ |
+| 2026-06-24 | R4 | **Execution strategy** = Foundation + Home first, then propagate (phased R0–R5) | Proves the whole new system end-to-end on the flagship homepage before touching the other 32 pages; lowest risk | ✅ |
+| 2026-06-24 | R5 | **New design personality** = "Performance Editorial" | Fuses BeastLife commerce energy/structure with Thryve editorial restraint + Bangla pride (see new spec) | ✅ |
+| 2026-06-24 | R6 | **No mascot** | Identity = T-mark + wordmark + Bangla pride; not an animal character (rejected BeastLife's panther) | ✅ |
 
 > Open / pending decisions live in §10.
+> **Redesign (2026-06-24):** full detail in
+> [`docs/superpowers/specs/2026-06-24-thryve-beastlife-blend-redesign.md`](./superpowers/specs/2026-06-24-thryve-beastlife-blend-redesign.md)
+> ("Performance Editorial" — BeastLife blend + story features). Decisions R1–R6 supersede/extend D2 for the redesign.
 
 ---
 
@@ -300,6 +309,16 @@ mobile target; LCP < 2.5s, CLS < 0.1; WCAG 2.1 AA (alt text, labels, 4.5:1 contr
   6. Global `overflow-x: hidden` safety net added.
 - **Re-verified:** `npm run build` → exit 0 (33 routes); all refined routes HTTP 200; no errors.
 - **Note:** a separate AI image-review tool produced an unreliable report (hallucinated truncated text, wrong fonts, a fictitious empty footer) — disregarded; trusted concrete checks + code instead.
+
+**2026-06-24 — Redesign kickoff: "Performance Editorial" (BeastLife blend) 🟡 Planning**
+- **Trigger:** client likes [beastlife.in](https://beastlife.in/) → asked for a refactor blending BeastLife with Thryve's existing features + story-based features.
+- Explored current state (site is complete + QA-passed, 33 routes, "Refined Editorial"); BeastLife was already a brief reference but the team had picked the editorial lane.
+- Studied BeastLife's live homepage structure (utility nav, category icon strip, hero carousel, tabbed "Talk of the Town" product carousels, wellness, "Shop by Flavours", "Beast Stories" transformations, apparel, bundles, "Shop By Category", flip testimonials, "Beastgram" UGC, panther mascot).
+- Ran a structured brainstorm (one decision at a time) → locked **R1–R6** (§4). Senior call: don't clone BeastLife's discount-dense look; take structure/energy, execute premium via **badge discipline**.
+- Wrote new design spec: [`docs/superpowers/specs/2026-06-24-thryve-beastlife-blend-redesign.md`](./superpowers/specs/2026-06-24-thryve-beastlife-blend-redesign.md) — direction, design system (adds `--volt` energy token), 17-section homepage, 3 story features, data-layer impact, phased propagation (R0–R5), scope/DoD.
+- User approved the spec → wrote implementation plan (first milestone): [`docs/superpowers/plans/2026-06-24-thryve-performance-editorial-r0-r1.md`](./superpowers/plans/2026-06-24-thryve-performance-editorial-r0-r1.md) — covers **R0 (Foundation refresh)** + **R1 (Homepage rebuild)**, 15 tasks, complete no-placeholder code, build-gated per task (this project verifies via `npm run build`/lint/render — no unit-test runner). R2–R5 are follow-on plans.
+- **Verification method note:** no test framework in this project; each task's gate = `npm run build` exit 0 (+ `npm run lint` clean + render check), matching §9's established QA.
+- **Next:** choose execution mode (subagent-driven vs inline) and begin R0.
 
 *(Append every future step here with a date stamp.)*
 

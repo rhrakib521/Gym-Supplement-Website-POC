@@ -8,12 +8,12 @@
 
 :root,
 :root[data-theme="dark"] {
-  --bg: #08090b;        /* cleaner near-black */
-  --surface-1: #111216; /* neutral card */
-  --surface-2: #18191d; /* raised/hover */
-  --line: #232429;      /* neutral hairline */
-  --ink: #f5f6f7;       /* crisp near-white */
-  --ink-dim: #969ba2;   /* neutral secondary */
+  --bg: #0b0e13;        /* lifted rich slate (lighter dark, not void-black) */
+  --surface-1: #14181f; /* neutral card */
+  --surface-2: #1b2027; /* raised/hover */
+  --line: #262b33;      /* neutral hairline */
+  --ink: #f6f7f8;       /* crisp near-white */
+  --ink-dim: #9aa1ab;   /* luminous secondary */
   --volt: #b6ff3c;      /* athletic energy spark — used sparingly */
   color-scheme: dark;
 }
@@ -78,7 +78,11 @@
   }
 
   body {
-    background: var(--bg);
+    background:
+      radial-gradient(1000px 540px at 50% -8%, rgba(29, 158, 117, 0.07), transparent 62%),
+      radial-gradient(760px 440px at 88% 6%, rgba(182, 255, 60, 0.045), transparent 58%),
+      var(--bg);
+    background-attachment: fixed;
     color: var(--ink);
     overflow-x: hidden;
     font-family: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;

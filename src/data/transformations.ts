@@ -5,7 +5,7 @@ export const transformations: Transformation[] = [
     id: "t-1",
     name: "Rifat",
     city: { en: "Dhaka", bn: "ঢাকা" },
-    duration: { en: "12 weeks" },
+    duration: { en: "12 weeks", bn: "১২ সপ্তাহ" },
     quote: {
       en: "Consistency + 5g a day. First time my lifts actually moved.",
       bn: "নিয়মিত + দিনে ৫g। প্রথমবার লিফট এগোলো।",
@@ -17,7 +17,7 @@ export const transformations: Transformation[] = [
     id: "t-2",
     name: "Sumaiya",
     city: { en: "Chattogram", bn: "চট্টগ্রাম" },
-    duration: { en: "16 weeks" },
+    duration: { en: "16 weeks", bn: "১৬ সপ্তাহ" },
     quote: {
       en: "Held my strength through a cut. The QR thing made me trust it.",
       bn: "কাটে শক্তি ধরে রেখেছি। QR-এ ভরসা হলো।",
@@ -29,10 +29,10 @@ export const transformations: Transformation[] = [
     id: "t-3",
     name: "Tanvir",
     city: { en: "Sylhet", bn: "সিলেট" },
-    duration: { en: "8 weeks" },
+    duration: { en: "8 weeks", bn: "৮ সপ্তাহ" },
     quote: {
       en: "Mango Ice mixes clean. No weird aftertaste, no fillers.",
-      bn: "ম্যাঙ্গো আইস দারুণ মিক্স হয়।",
+      bn: "ম্যাঙ্গো আইস দারুণ মিক্স হয়। কোনো অদ্ভুত স্বাদ নেই।",
     },
     image:
       "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=800&q=80",

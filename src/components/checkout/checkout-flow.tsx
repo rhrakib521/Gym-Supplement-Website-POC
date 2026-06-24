@@ -222,7 +222,7 @@ export function CheckoutFlow() {
           </ul>
           <dl className="mt-4 space-y-2 border-t border-line pt-4 text-sm">
             <div className="flex justify-between"><dt className="text-ink-dim">Subtotal</dt><dd>{formatBDT(subtotal, lang)}</dd></div>
-            {promoApplied ? <div className="flex justify-between"><dt className="text-ink-dim">Promo (10%)</dt><dd className="text-green">−{formatBDT(promoDiscount, lang)}</dd></div> : null}
+            {promoApplied ? <div className="flex justify-between"><dt className="text-ink-dim">Promo (10%)</dt><dd className="text-amber">−{formatBDT(promoDiscount, lang)}</dd></div> : null}
             <div className="flex justify-between"><dt className="text-ink-dim">Delivery</dt><dd>{delivery === 0 ? "Free" : formatBDT(delivery, lang)}</dd></div>
             <div className="flex justify-between border-t border-line pt-3 text-base font-semibold"><dt>Total</dt><dd>{formatBDT(total, lang)}</dd></div>
           </dl>

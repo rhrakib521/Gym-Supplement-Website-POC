@@ -329,6 +329,21 @@ mobile target; LCP < 2.5s, CLS < 0.1; WCAG 2.1 AA (alt text, labels, 4.5:1 contr
 - **Defer to R5:** convert `<img>` → `next/image` across new + existing sections.
 - **Next:** user commits; then write the R2 (commerce propagation) follow-on plan.
 
+**2026-06-24 — R0+R1 committed + R2 plan written**
+- R0+R1 committed: **`d07813a`** on `redesign/performance-editorial` (28 files, +1035/−29), build green, homepage visually verified via headless Chrome screenshot (desktop + mobile). Scratch (`.superpowers/`) gitignored.
+- **R2 plan written:** [`docs/superpowers/plans/2026-06-24-thryve-performance-editorial-r2.md`](./superpowers/plans/2026-06-24-thryve-performance-editorial-r2.md) — 5 tasks: (1) `Price` discount chip red→amber [badge discipline, propagates to all cards], (2) PDP trust-journey block + amber savings, (3) `/shop` featured BestsellerCarousel, (4) cart volt free-delivery progress bar, (5) delete dead `QrVerifyCta`/`CategoryStrip`/`Bestsellers`. **Reasoned deviation:** keep filterable grids on `/creatine`+`/accessories` (better UX than carousels; they inherit the card fixes) — carousel only on `/shop` as a featured row.
+- **Next:** execute R2.
+
+**2026-06-24 — Phase R2: executed ✅ (commerce propagation)**
+- Executed R2 plan inline (same pattern: build-gated, one commit at end). 5 tasks:
+  1. `Price` discount chip red→amber — badge discipline now applies to **every** product card + PDP (highest-leverage fix).
+  2. PDP: amber subscription savings chip + a compact "Why your jar is real" trust-journey `Stepper` block (Source→Lab→Jar→QR) above the content tabs.
+  3. `/shop`: featured `BestsellerCarousel` ("Talk of the town") row above the filterable grid.
+  4. `/cart`: volt free-delivery progress bar + "unlocked free delivery" state.
+  5. Deleted dead `QrVerifyCta`, `CategoryStrip`, `Bestsellers` (verified zero imports → rm → build green).
+- **Verified:** `npm run build` exit 0 (33 routes); `npm run lint` — 7 pre-existing errors only (unchanged), **R2 files clean**, warnings 23→22. `/creatine` + `/accessories` inherit the card fix automatically (grids kept by design).
+- **Next:** write + execute R3 (content + stories: `/stories`, `/about`, `/science`, `/athletes`, `/blog`, `/resources`, teasers, `/track`, `/verify` — incl. fixing the 7 pre-existing lint errors in `about`/`order`/`resources`).
+
 *(Append every future step here with a date stamp.)*
 
 ---

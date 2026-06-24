@@ -105,10 +105,22 @@ export default function CartPage() {
               <dd>{delivery === 0 ? "Free" : formatBDT(delivery, lang)}</dd>
             </div>
             {delivery > 0 ? (
-              <p className="text-xs text-ink-dim">
-                Add {formatBDT(site.freeDeliveryThreshold - subtotal, lang)} more for free delivery.
-              </p>
-            ) : null}
+              <div className="pt-1">
+                <div className="h-1.5 w-full overflow-hidden rounded-full bg-surface-2">
+                  <div
+                    className="h-full rounded-full bg-volt transition-all"
+                    style={{
+                      width: `${Math.min(100, Math.round((subtotal / site.freeDeliveryThreshold) * 100))}%`,
+                    }}
+                  />
+                </div>
+                <p className="mt-1.5 text-xs text-ink-dim">
+                  Add {formatBDT(site.freeDeliveryThreshold - subtotal, lang)} more for free delivery.
+                </p>
+              </div>
+            ) : (
+              <p className="text-xs font-medium text-green">You&apos;ve unlocked free delivery.</p>
+            )}
             <div className="flex justify-between border-t border-line pt-3 text-base font-semibold">
               <dt>Total</dt>
               <dd>{formatBDT(total, lang)}</dd>

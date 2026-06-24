@@ -42,7 +42,7 @@ export function Price({
         </span>
       ) : null}
       {pct > 0 ? (
-        <span className="rounded bg-red/12 px-1.5 py-0.5 text-xs font-semibold text-red">
+        <span className="rounded-md bg-amber/12 px-1.5 py-0.5 text-xs font-bold text-amber">
           −{l === "bn" ? toBn(pct) : pct}%
         </span>
       ) : null}

@@ -19,10 +19,12 @@ import { tx, formatBDT } from "@/lib/format";
 import { useLang } from "@/lib/use-lang";
 import { cn } from "@/lib/utils";
 import { site } from "@/data/site";
+import { getTrustJourneySync } from "@/lib/api";
 import { Badge } from "@/components/ui/badge";
 import { Price } from "@/components/ui/price";
 import { Stars } from "@/components/ui/stars";
 import { Button } from "@/components/ui/button";
+import { Stepper } from "@/components/ui/stepper";
 import { ProductGallery } from "./product-gallery";
 import { Reviews } from "./reviews";
 import { UpsellWidget } from "./upsell-widget";
@@ -80,7 +82,7 @@ export function ProductDetail({ product }: { product: Product }) {
               <div className="flex flex-wrap items-baseline gap-3">
                 <span className="font-display text-3xl font-semibold">{formatBDT(unitPrice, lang)}</span>
                 <span className="text-ink-dim line-through">{formatBDT(product.price, lang)}</span>
-                <span className="rounded bg-green/12 px-1.5 py-0.5 text-xs text-green">Save {discount}%</span>
+                <span className="rounded-md bg-amber/12 px-1.5 py-0.5 text-xs font-bold text-amber">Save {discount}%</span>
                 <span className="text-sm text-ink-dim">{formatBDT(unitPrice, lang)}{lang === "bn" ? "/মাস" : "/mo"}</span>
               </div>
             ) : (
@@ -178,6 +180,13 @@ export function ProductDetail({ product }: { product: Product }) {
             ))}
           </div>
         </div>
+      </div>
+
+      <div className="mt-16 rounded-3xl border border-line bg-surface-1 p-6 md:p-8">
+        <p className="mb-6 text-xs font-semibold uppercase tracking-[0.18em] text-volt">
+          Why your jar is real
+        </p>
+        <Stepper steps={getTrustJourneySync()} lang={lang} />
       </div>
 
       <div className="mt-16">

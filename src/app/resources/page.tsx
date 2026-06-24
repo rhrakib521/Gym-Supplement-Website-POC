@@ -42,7 +42,7 @@ export default function ResourcesPage() {
               </div>
             ))}
           </div>
-          <p className="mt-6 text-xs text-ink-dim">Guides are free — we'll ask for your phone so we can send them via WhatsApp.</p>
+          <p className="mt-6 text-xs text-ink-dim">Guides are free — we&apos;ll ask for your phone so we can send them via WhatsApp.</p>
         </Container>
       </section>
     </>

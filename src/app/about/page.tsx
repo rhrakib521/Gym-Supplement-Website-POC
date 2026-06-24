@@ -3,6 +3,7 @@ import { FlaskConical, QrCode, MapPin, Truck } from "lucide-react";
 import { PageHeader } from "@/components/layout/page-header";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
+import { BrandStory } from "@/components/sections/brand-story";
 
 export const metadata: Metadata = {
   title: "About",
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
 
 const VALUES = [
   { icon: FlaskConical, title: "Lab-tested, every batch", body: "Third-party tested for purity and heavy metals. The certificate is real and downloadable." },
-  { icon: QrCode, title: "QR-authenticated", body: "Every jar carries a unique serial. Verify it in seconds — if it can't be verified, it isn't ours." },
+  { icon: QrCode, title: "QR-authenticated", body: "Every jar carries a unique serial. Verify it in seconds — if it can’t be verified, it isn’t ours." },
   { icon: MapPin, title: "Made in Bangladesh", body: "A local hero brand, not a cheap import copy. Built for Bangladeshi athletes." },
   { icon: Truck, title: "COD, nationwide", body: "Cash on delivery across 689 areas. Try it with zero risk." },
 ];
@@ -22,31 +23,10 @@ export default function AboutPage() {
       <PageHeader
         eyebrow="About"
         title="Built so Bangladeshi athletes never have to guess."
-        subtitle="Thryve started with one frustration: you couldn't buy creatine in Bangladesh and actually trust it. So we made one you can."
+        subtitle="Thryve started with one frustration: you couldn’t buy creatine in Bangladesh and actually trust it. So we made one you can."
       />
 
-      <section className="py-16">
-        <Container>
-          <div className="mx-auto max-w-3xl space-y-5 leading-relaxed text-ink-dim">
-            <p>
-              For years, buying supplements here meant choosing between overpriced imports and unverified
-              local jars. Neither felt right. Counterfeits are common, labels get copied, and the person
-              buying has no way to know what's actually in the tub.
-            </p>
-            <p>
-              Thryve exists to fix that. We make a single, obsessively-good product — pure micronized
-              creatine monohydrate, dosed at a true 5g — and we make it verifiable. Every batch is
-              third-party lab tested. Every jar carries a unique QR serial. Every customer can check for
-              themselves.
-            </p>
-            <p>
-              We're a Bangladeshi brand first. That means Bangla support, bKash and Nagad, cash on
-              delivery, and WhatsApp when you need us. It also means we hold ourselves to the same
-              standard as the global names — because local shouldn't mean less.
-            </p>
-          </div>
-        </Container>
-      </section>
+      <BrandStory />
 
       <section className="border-y border-line bg-surface-1 py-16">
         <Container>

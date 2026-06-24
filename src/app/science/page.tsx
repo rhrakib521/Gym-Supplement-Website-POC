@@ -4,6 +4,7 @@ import { FlaskConical, BookOpen, QrCode, ArrowRight } from "lucide-react";
 import { PageHeader } from "@/components/layout/page-header";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
+import { TrustJourney } from "@/components/sections/trust-journey";
 
 export const metadata: Metadata = {
   title: "Science",
@@ -66,6 +67,8 @@ export default function SciencePage() {
           </div>
         </Container>
       </section>
+
+      <TrustJourney />
     </>
   );
 }

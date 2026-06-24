@@ -197,7 +197,7 @@ export function CheckoutFlow() {
               </div>
 
               <Button onClick={placeOrder} size="lg" className="w-full">Place Order · {formatBDT(total, lang)}</Button>
-              <p className="text-center text-xs text-ink-dim">By placing your order you agree to Thryve's terms. Cash on delivery available nationwide.</p>
+              <p className="text-center text-xs text-ink-dim">By placing your order you agree to Thryve&apos;s terms. Cash on delivery available nationwide.</p>
             </div>
           ) : null}
         </div>

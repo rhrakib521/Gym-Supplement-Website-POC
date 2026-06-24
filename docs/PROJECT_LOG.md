@@ -344,6 +344,13 @@ mobile target; LCP < 2.5s, CLS < 0.1; WCAG 2.1 AA (alt text, labels, 4.5:1 contr
 - **Verified:** `npm run build` exit 0 (33 routes); `npm run lint` — 7 pre-existing errors only (unchanged), **R2 files clean**, warnings 23→22. `/creatine` + `/accessories` inherit the card fix automatically (grids kept by design).
 - **Next:** write + execute R3 (content + stories: `/stories`, `/about`, `/science`, `/athletes`, `/blog`, `/resources`, teasers, `/track`, `/verify` — incl. fixing the 7 pre-existing lint errors in `about`/`order`/`resources`).
 
+**2026-06-24 — Phase R3: executed ✅ (content + stories + lint fixes)**
+- **Story integration:** `/about` now renders the immersive `<BrandStory />` chapter section (its natural home); `/science` gained the `<TrustJourney />` block (trust moat made visible, per spec §5.2).
+- **Lint fixes (5 safe apostrophe errors → 0):** `about`×3 (removed by replacing the prose section with BrandStory), `resources`×1, `checkout-flow`×1.
+- **2 `setState`-in-effect` errors intentionally left:** `order/[id]` + `theme-toggle` read client-only storage (sessionStorage / DOM) on mount — the correct SSR-safe pattern; "fixing" via lazy init would break hydration. Documented as false-positives, build green.
+- **Verified:** `npm run build` exit 0 (33 routes); `npm run lint` — **2 errors** (down from 7), 22 `<img>` warnings (deferred to R5). `/stories`, `/athletes`, `/blog`, teasers, `/track`, `/verify` already on-brand (green/dark) — deeper restyle is low-value; deferred to polish.
+- **Next:** R4 (global chrome + purchase-flow badge discipline) → R5 (polish + QA).
+
 *(Append every future step here with a date stamp.)*
 
 ---

@@ -37,7 +37,8 @@ export interface Review {
   verified: boolean;
 }
 
-export type Badge = "bestseller" | "lab_tested" | "qr" | "new" | "sale";
+// Badge discipline (R2): "save" added; discount badges are quiet + amber.
+export type Badge = "bestseller" | "lab_tested" | "qr" | "new" | "sale" | "save";
 
 export interface Product {
   id: string;
@@ -90,4 +91,60 @@ export interface CartLine {
   productId: string;
   flavourId: string;
   qty: number;
+}
+
+/* ---------- Redesign (Performance Editorial) story content ---------- */
+
+/** Goal-based journey ("What's your grind?") — STORY feature. */
+export interface Goal {
+  id: "build" | "cut" | "perform";
+  label: L;
+  blurb: L;
+  productSlugs: string[]; // resolved via getProductBySlugSync
+  plan: { title: L; detail: L }[];
+}
+
+/** Brand-origin scroll story chapter — STORY feature. */
+export interface StoryChapter {
+  id: string;
+  kicker: L;
+  title: L;
+  body: L;
+  image?: string;
+  stat?: { value: string; label: L };
+}
+
+/** Product/trust journey step — STORY feature. */
+export type TrustIcon = "source" | "lab" | "jar" | "qr";
+export interface TrustStep {
+  id: string;
+  icon: TrustIcon;
+  title: L;
+  detail: L;
+}
+
+/** Customer transformation card. */
+export interface Transformation {
+  id: string;
+  name: string;
+  city: L;
+  duration: L; // e.g. "12 weeks"
+  quote: L;
+  image: string;
+}
+
+/** UGC grid item ("Thryvergram"). */
+export interface UgcItem {
+  id: string;
+  image: string;
+  handle: string;
+  caption: L;
+}
+
+/** Flavour picker tile. */
+export interface FlavourTile {
+  id: string;
+  name: L;
+  image: string;
+  href: string;
 }

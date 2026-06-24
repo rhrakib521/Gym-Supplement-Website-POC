@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 /* ============================================================
-   THRYVE — Design tokens · "Refined Editorial"
-   Dark-first. Green is punctuation, not paint. See PROJECT_LOG §5.
+   THRYVE — Design tokens · "Performance Editorial"
+   Dark-first. Green is punctuation, not paint. Volt is a
+   sparingly-used athletic energy spark. See PROJECT_LOG §5 + spec.
    ============================================================ */
 
 :root,
@@ -13,6 +14,7 @@
   --line: #222831;
   --ink: #f2f5f7;
   --ink-dim: #9aa3ad;
+  --volt: #b6ff3c; /* athletic energy spark — used sparingly */
   color-scheme: dark;
 }
 
@@ -23,6 +25,7 @@
   --line: #e4e7eb;
   --ink: #0a0a14;
   --ink-dim: #5a5a72;
+  --volt: #5b9e10; /* darker green-lime for AA contrast on white */
   color-scheme: light;
 }
 
@@ -38,7 +41,7 @@
   --container: 1240px;
 }
 
-/* Map tokens into Tailwind v4 so bg-bg / text-ink / border-line / bg-green … work */
+/* Map tokens into Tailwind v4 so bg-bg / text-ink / border-line / bg-green / text-volt … work */
 @theme inline {
   --color-bg: var(--bg);
   --color-surface-1: var(--surface-1);
@@ -47,6 +50,7 @@
   --color-ink: var(--ink);
   --color-ink-dim: var(--ink-dim);
   --color-green: var(--green);
+  --color-volt: var(--volt);
   --color-green-soft: var(--green-soft);
   --color-green-deep: var(--green-deep);
   --color-amber: var(--amber);

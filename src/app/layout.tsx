@@ -8,6 +8,7 @@ import { CartDrawer } from "@/components/layout/cart-drawer";
 import { MobileMenu } from "@/components/layout/mobile-menu";
 import { WhatsAppFab } from "@/components/layout/whatsapp-fab";
 import { ExitIntent } from "@/components/layout/exit-intent";
+import { TopUtilityBar } from "@/components/layout/top-utility-bar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -95,6 +96,7 @@ export default function RootLayout({
       </head>
       <body className="flex min-h-dvh flex-col bg-bg text-ink antialiased">
         <Providers>
+          <TopUtilityBar />
           <Navbar />
           <main className="flex-1">{children}</main>
           <Footer />

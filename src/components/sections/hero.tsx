@@ -23,6 +23,7 @@ export function Hero() {
     <section ref={ref} className="relative overflow-hidden">
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute left-1/2 top-[-12%] h-[440px] w-[860px] max-w-[120vw] -translate-x-1/2 rounded-full bg-green/10 blur-[130px]" />
+        <div className="absolute right-[5%] top-[10%] h-72 w-72 rounded-full bg-volt/10 blur-[120px]" />
       </div>
 
       <Container className="grid items-center gap-12 py-14 md:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 lg:py-28">
@@ -36,11 +37,14 @@ export function Hero() {
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: EASE }}
-            className="text-balance text-[clamp(2.75rem,8vw,6rem)] font-semibold leading-[0.92]"
+            className="text-balance text-[clamp(3rem,9vw,7rem)] font-bold leading-[0.9] tracking-[-0.03em]"
           >
             {t("hero.title1")}
             <br />
-            <span className="text-green">{t("hero.title2")}</span>
+            <span className="text-green">
+              {t("hero.title2")}
+              <span className="mt-1 block h-1 w-16 rounded-full bg-volt" />
+            </span>
           </motion.h1>
 
           <motion.p

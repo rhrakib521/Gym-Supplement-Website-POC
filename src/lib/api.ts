@@ -11,12 +11,30 @@
  * Components never import mock data directly — they go through this file.
  */
 
-import type { Athlete, BlogPost, Category, Product, Review } from "@/types";
+import type {
+  Athlete,
+  BlogPost,
+  Category,
+  FlavourTile,
+  Goal,
+  Product,
+  Review,
+  StoryChapter,
+  Transformation,
+  TrustStep,
+  UgcItem,
+} from "@/types";
 import { categories as categoriesData } from "@/data/categories";
 import { products as productsData } from "@/data/products";
 import { athletes as athletesData } from "@/data/athletes";
 import { reviews as reviewsData } from "@/data/reviews";
 import { blogPosts as blogData } from "@/data/blog";
+import { goals as goalsData } from "@/data/goals";
+import { brandStory as brandStoryData } from "@/data/brand-story";
+import { trustJourney as trustJourneyData } from "@/data/trust-journey";
+import { transformations as transformationsData } from "@/data/transformations";
+import { ugc as ugcData } from "@/data/ugc";
+import { flavourTiles as flavourTilesData } from "@/data/flavours";
 
 function resolve<T>(value: T): Promise<T> {
   return Promise.resolve(value);
@@ -70,7 +88,7 @@ export function getAthletesSync(): Athlete[] {
   return athletesData;
 }
 export async function getAthletes(): Promise<Athlete[]> {
-  return resolve(athletesData);
+  return resolve(getAthletesSync());
 }
 
 /* ---------- Reviews ---------- */
@@ -149,4 +167,33 @@ export async function trackByPhone(_phone: string): Promise<TrackedOrder[]> {
       total: 2480,
     },
   ]);
+}
+
+/* ---------- Story / commerce content (redesign R0) ---------- */
+
+export function getGoalsSync(): Goal[] {
+  return goalsData;
+}
+export function getBrandStorySync(): StoryChapter[] {
+  return brandStoryData;
+}
+export function getTrustJourneySync(): TrustStep[] {
+  return trustJourneyData;
+}
+export function getTransformationsSync(): Transformation[] {
+  return transformationsData;
+}
+export function getUgcSync(): UgcItem[] {
+  return ugcData;
+}
+export function getFlavoursSync(): FlavourTile[] {
+  return flavourTilesData;
+}
+export function getBundlesSync(): Product[] {
+  return productsData.filter((p) => p.bundle || p.bestseller);
+}
+export function getProductsBySlugsSync(slugs: string[]): Product[] {
+  return slugs
+    .map((s) => productsData.find((p) => p.slug === s))
+    .filter(Boolean) as Product[];
 }

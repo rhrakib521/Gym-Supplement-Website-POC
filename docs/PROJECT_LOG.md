@@ -320,6 +320,15 @@ mobile target; LCP < 2.5s, CLS < 0.1; WCAG 2.1 AA (alt text, labels, 4.5:1 contr
 - **Verification method note:** no test framework in this project; each task's gate = `npm run build` exit 0 (+ `npm run lint` clean + render check), matching §9's established QA.
 - **Next:** choose execution mode (subagent-driven vs inline) and begin R0.
 
+**2026-06-24 — Phase R0+R1: implemented ✅ (Performance Editorial foundation + homepage)**
+- Executed plan [`docs/superpowers/plans/2026-06-24-thryve-performance-editorial-r0-r1.md`](./superpowers/plans/2026-06-24-thryve-performance-editorial-r0-r1.md) inline (user chose to drive git manually; one commit at end). Branch: `redesign/performance-editorial` (baseline docs commit `c5b8d42`).
+- **R0 Foundation:** `--volt` energy token (theme-aware) in `globals.css`; badge discipline (`save` kind + quiet `sale` + `DiscountChip`); 6 new story data modules (`goals`, `brand-story`, `trust-journey`, `transformations`, `ugc`, `flavours`) + new types + `lib/api.ts` accessors (`getGoalsSync`, `getBrandStorySync`, `getTrustJourneySync`, `getTransformationsSync`, `getUgcSync`, `getFlavoursSync`, `getBundlesSync`, `getProductsBySlugsSync`); new primitives `Stepper`, `ProductCarousel` (tabbed); new sections `CategoryTileStrip`, `FlavourPicker`, `StackCarousel`, `GoalJourney`, `BrandStory`, `TrustJourney`, `TransformationStrip`, `UgcGrid`, `BestsellerCarousel`; `TopUtilityBar` wired into `layout.tsx`.
+- **R1 Homepage:** refreshed `Hero` (volt glow accent, athletic `clamp(3rem,9vw,7rem)` display, "Fuel the grind. / Thryve more." tagline); `page.tsx` now composes the 17-section stack (QrVerifyCta retired on home → replaced by TrustJourney).
+- **Verified:** `npx tsc --noEmit` exit 0; `npm run build` exit 0 (**33 routes prerendered**, `/` static); `npm run lint` — **new/changed files have 0 errors** (only expected `<img>` warnings matching codebase convention).
+- **Known, out-of-scope (NOT introduced here):** 7 pre-existing lint errors in untouched pages — `about/page.tsx`, `order/[id]/page.tsx`, `resources/page.tsx`, `checkout-flow.tsx`, `theme-toggle.tsx` (unescaped apostrophes + 2× setState-in-effect). **Fix in R3/R4.**
+- **Defer to R5:** convert `<img>` → `next/image` across new + existing sections.
+- **Next:** user commits; then write the R2 (commerce propagation) follow-on plan.
+
 *(Append every future step here with a date stamp.)*
 
 ---

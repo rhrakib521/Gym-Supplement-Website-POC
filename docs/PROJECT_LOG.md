@@ -362,6 +362,12 @@ mobile target; LCP < 2.5s, CLS < 0.1; WCAG 2.1 AA (alt text, labels, 4.5:1 contr
 - **Deliberately deferred (not regressions):** `<img>` → `next/image` conversion (the project intentionally uses `<img>` to avoid sharp/optimization friction — see Phase 1 note); full Bangla translations for new story copy (EN renders, BN falls back).
 - 🟢 **R0→R5 complete.** Full Performance Editorial redesign shipped on `redesign/performance-editorial` (commits: docs `c5b8d42` → R0+R1 `d07813a` → R2 `1deb74a` → R3 `6173479` → R4+R5). Ready to merge to `main` when the user chooses.
 
+**2026-06-24 — Visual refinement pass ✅ (premium polish)**
+- **Fonts (world-class):** swapped body/UI Inter → **Plus Jakarta Sans** (`next/font`, weights 400–700); kept Space Grotesk (display) + Hind Siliguri (Bangla). Tighter body tracking (`-0.011em`) + leading (`1.55`); display tracking `-0.025em`.
+- **Palette (darker + cleaner):** neutralised the surfaces (less blue tint) for a crisp dark+white+clean-energy monochrome — `--bg #08090b`, `--surface-1 #111216`, `--surface-2 #18191d`, `--line #232429`, `--ink #f5f6f7`, `--ink-dim #969ba2`; light mode cleaned to pure-white + neutral grays. Volt/green accent retained as the energy spark.
+- **Spacing (tightened):** reduced oversized section paddings across the homepage story sections + hero + footer (e.g. `py-24/36`→`py-16/24`, `space-y-20/28`→`space-y-14/20`, hero `py-28`→`py-20`, footer `mt-24`→`mt-14`); added a `.section-y` utility (`clamp(3rem,6vw,5.5rem)`).
+- **Verified:** `npm run build` exit 0 (33 routes).
+
 *(Append every future step here with a date stamp.)*
 
 ---

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk, Hind_Siliguri } from "next/font/google";
+import { Plus_Jakarta_Sans, Space_Grotesk, Hind_Siliguri } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/providers";
 import { Navbar } from "@/components/layout/navbar";
@@ -10,9 +10,10 @@ import { WhatsAppFab } from "@/components/layout/whatsapp-fab";
 import { ExitIntent } from "@/components/layout/exit-intent";
 import { TopUtilityBar } from "@/components/layout/top-utility-bar";
 
-const inter = Inter({
+const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-jakarta",
   display: "swap",
 });
 
@@ -85,7 +86,7 @@ export default function RootLayout({
       data-theme="dark"
       data-lang="en"
       suppressHydrationWarning
-      className={`${inter.variable} ${spaceGrotesk.variable} ${hindSiliguri.variable}`}
+      className={`${plusJakarta.variable} ${spaceGrotesk.variable} ${hindSiliguri.variable}`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />

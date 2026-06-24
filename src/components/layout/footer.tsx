@@ -73,7 +73,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="mt-24 border-t border-line bg-surface-1">
+    <footer className="mt-14 border-t border-line bg-surface-1">
       <Container className="py-16">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1.6fr]">
           <div>

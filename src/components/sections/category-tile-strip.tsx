@@ -14,7 +14,7 @@ export function CategoryTileStrip() {
   const cats = getCategoriesSync();
 
   return (
-    <section className="py-12 md:py-16">
+    <section className="py-10 md:py-14">
       <Container>
         <SectionHeading
           eyebrow="The range"

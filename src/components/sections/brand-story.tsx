@@ -13,12 +13,12 @@ export function BrandStory() {
   const chapters = getBrandStorySync();
 
   return (
-    <section className="relative py-24 md:py-36">
+    <section className="relative py-16 md:py-24">
       <Container>
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-volt">
           {t("brandStory.eyebrow", { defaultValue: "The Thryve story" })}
         </p>
-        <div className="mt-10 space-y-20 md:space-y-28">
+        <div className="mt-8 space-y-14 md:space-y-20">
           {chapters.map((c, i) => (
             <Reveal key={c.id}>
               <div

@@ -11,7 +11,7 @@ export function UgcGrid() {
   const items = getUgcSync();
 
   return (
-    <section className="py-20 md:py-24">
+    <section className="py-14 md:py-20">
       <Container>
         <SectionHeading eyebrow="Thryvergram" title="#ThryveMode" />
         <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">

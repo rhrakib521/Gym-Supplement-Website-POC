@@ -22,7 +22,7 @@ export function TrustJourney() {
   };
 
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-14 md:py-20">
       <Container>
         <div className="noise relative overflow-hidden rounded-3xl border border-line bg-surface-1 p-8 md:p-14">
           <div className="pointer-events-none absolute -right-10 -top-10 h-64 w-64 rounded-full bg-volt/10 blur-3xl" />

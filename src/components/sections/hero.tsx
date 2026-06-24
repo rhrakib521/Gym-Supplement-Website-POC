@@ -26,7 +26,7 @@ export function Hero() {
         <div className="absolute right-[5%] top-[10%] h-72 w-72 rounded-full bg-volt/10 blur-[120px]" />
       </div>
 
-      <Container className="grid items-center gap-12 py-14 md:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 lg:py-28">
+      <Container className="grid items-center gap-10 py-10 md:py-16 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:py-20">
         <div>
           <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-surface-1 px-3 py-1.5 text-xs text-ink-dim">
             <span className="h-1.5 w-1.5 rounded-full bg-green" />

@@ -20,7 +20,7 @@ export function GoalJourney() {
   const stack = active ? getProductsBySlugsSync(active.productSlugs) : [];
 
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-14 md:py-20">
       <Container>
         <SectionHeading eyebrow="Start here" title="What's your grind?" />
 

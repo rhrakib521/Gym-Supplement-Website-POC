@@ -14,7 +14,7 @@ export function TransformationStrip() {
   const items = getTransformationsSync();
 
   return (
-    <section className="py-20 md:py-24">
+    <section className="py-14 md:py-20">
       <Container>
         <SectionHeading
           eyebrow="Thryver Stories"

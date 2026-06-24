@@ -14,7 +14,7 @@ export function FlavourPicker() {
   const flavours = getFlavoursSync();
 
   return (
-    <section className="py-16 md:py-20">
+    <section className="py-12 md:py-16">
       <Container>
         <SectionHeading eyebrow="Taste" title="Shop by flavour" />
         <div className="mt-10 flex flex-wrap justify-center gap-6 md:gap-10">

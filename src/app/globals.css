@@ -1,30 +1,30 @@
 @import "tailwindcss";
 
 /* ============================================================
-   THRYVE — Design tokens · "Performance Editorial"
-   Dark-first. Green is punctuation, not paint. Volt is a
-   sparingly-used athletic energy spark. See PROJECT_LOG §5 + spec.
+   THRYVE — Design tokens · "Performance Editorial" (refined)
+   Dark-first, high-contrast monochrome + electric accent.
+   Clean near-black canvas, neutral surfaces, volt = energy spark.
    ============================================================ */
 
 :root,
 :root[data-theme="dark"] {
-  --bg: #0b0f13;
-  --surface-1: #12161b;
-  --surface-2: #1a1f26;
-  --line: #222831;
-  --ink: #f2f5f7;
-  --ink-dim: #9aa3ad;
-  --volt: #b6ff3c; /* athletic energy spark — used sparingly */
+  --bg: #08090b;        /* cleaner near-black */
+  --surface-1: #111216; /* neutral card */
+  --surface-2: #18191d; /* raised/hover */
+  --line: #232429;      /* neutral hairline */
+  --ink: #f5f6f7;       /* crisp near-white */
+  --ink-dim: #969ba2;   /* neutral secondary */
+  --volt: #b6ff3c;      /* athletic energy spark — used sparingly */
   color-scheme: dark;
 }
 
 :root[data-theme="light"] {
   --bg: #ffffff;
-  --surface-1: #f3f8f5;
-  --surface-2: #e8f0ed;
-  --line: #e4e7eb;
-  --ink: #0a0a14;
-  --ink-dim: #5a5a72;
+  --surface-1: #f5f6f7;
+  --surface-2: #ebedef;
+  --line: #e4e6e9;
+  --ink: #0a0a0c;
+  --ink-dim: #565a63;
   --volt: #5b9e10; /* darker green-lime for AA contrast on white */
   color-scheme: light;
 }
@@ -57,9 +57,9 @@
   --color-blue: var(--blue);
   --color-red: var(--red);
 
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-space-grotesk), var(--font-inter), sans-serif;
-  --font-bn: var(--font-hind-siliguri), var(--font-inter), sans-serif;
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-space-grotesk), var(--font-jakarta), sans-serif;
+  --font-bn: var(--font-hind-siliguri), var(--font-jakarta), sans-serif;
   --font-serif: Georgia, "Times New Roman", serif;
 
   --radius-xl: 14px;
@@ -81,8 +81,10 @@
     background: var(--bg);
     color: var(--ink);
     overflow-x: hidden;
-    font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+    font-family: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
     font-feature-settings: "ss01", "cv01";
+    letter-spacing: -0.011em;
+    line-height: 1.55;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -90,17 +92,17 @@
 
   /* Bengali gets its own type stack */
   :where(html[data-lang="bn"], [data-lang="bn"]) {
-    font-family: var(--font-hind-siliguri), var(--font-inter), sans-serif;
+    font-family: var(--font-hind-siliguri), var(--font-jakarta), sans-serif;
   }
   :where(html[data-lang="bn"]) body {
-    font-family: var(--font-hind-siliguri), var(--font-inter), sans-serif;
+    font-family: var(--font-hind-siliguri), var(--font-jakarta), sans-serif;
   }
 
   h1, h2, h3, h4, h5 {
-    font-family: var(--font-space-grotesk), var(--font-inter), sans-serif;
-    letter-spacing: -0.02em;
+    font-family: var(--font-space-grotesk), var(--font-jakarta), sans-serif;
+    letter-spacing: -0.025em;
     font-weight: 600;
-    line-height: 1.02;
+    line-height: 1.03;
   }
 
   ::selection {
@@ -147,6 +149,11 @@
     text-wrap: pretty;
   }
 
+  /* Section rhythm — tightened (was 5–9rem; now 3.5–5.5rem) */
+  .section-y {
+    padding-block: clamp(3rem, 6vw, 5.5rem);
+  }
+
   /* Marquee ticker */
   .animate-marquee {
     animation: thryve-marquee 30s linear infinite;
@@ -176,7 +183,7 @@
     position: absolute;
     inset: 0;
     pointer-events: none;
-    opacity: 0.035;
+    opacity: 0.03;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 }
